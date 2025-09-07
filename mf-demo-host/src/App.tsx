@@ -28,7 +28,7 @@ const App = () => {
         <br />
         but if the host and remote have compatible frameworks, other modules,
         such as components, can be federated too.
-        <p></p>
+        <br />
         Here is a button component imported from a remote and rendered here on
         the host:
       </p>
