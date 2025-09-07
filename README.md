@@ -1,35 +1,31 @@
-# module-federation-template-rsbuild-rspack
+# Rsbuild & Rspack Module Federation Template
 
-Module Federation Starter Project with a Host Portal and one Remote MFE, showcasing both component sharing and framework-agnostic application mounting, as well as independent host and remote client navigation. Based on Rsbuild and Rspack.
+This is a starter project demonstrating **Module Federation** using **Rsbuild** and **Rspack**. It includes a host application and a single remote micro-frontend (MFE). The template showcases component sharing, framework-agnostic application mounting, and independent navigation for both the host and remote clients.
 
-Contains two folders that you can easily convert to separate repositories or separate packages, if you're using a monorepo.
+The project is structured into two folders, which can easily be converted into separate repositories or used as separate packages within a monorepo.
 
-**Contents:**
+## Structure
 
-- Micro Frontends Demo - MFE Host App\
-  This is a host application for other Micro Frontends.
-- Micro Frontends Demo - MFE Remote App\
-  This is a remote Micro Frontend application to be mounted and/or have its components reused in a host application.
+* **MFE Host App:** A host application designed to load and orchestrate other MFEs.
+* **MFE Remote App:** A remote micro-frontend that provides components and/or an entire application to be mounted within a host.
 
-Refer to their folders' `README.md` files for information on how to launch the demo locally.
+Refer to the `README.md` file within each folder for instructions on how to run the demo locally.
 
-## Features
+## Key Features
 
-- Projects are based on `create-rsbuild`'s React template (`yarn create rsbuild`) with Biome for code linting and formatting. I could have used the Angular template for the Remote, to showcase the framework-agnostic mounting, but I have close to no experience with other frameworks and I didn't have time to waste.
-- The `tsconfig`'s were tightened a bit for more robust production code (`noFallthroughCasesInSwitch`, `noUncheckedIndexedAccess`, `strictNullChecks`, `noImplicitAny` &mdash; TS compiler options which are highly recommended for high quality projects).
-- React 19 on both the Host and the Remote, but they could have been any of the frameworks supported by Rsbuild.
-- React Router, configured in Data Mode, moving route configuration outside of React rendering, with minimal extensions added to the routes so that it's super easy to share a single source of truth for routing and links (e.g., `NavLinks` used for app navigation). Data Mode also enables router data loading, actions, route navigation pending state, and more.
-- Rsbuild and Rspack for near instant hot-reload, even when updating the remote MFE and viewing it mounted in the Host FE.
-- Provisions made for configuring remotes' URLs in production or other deployed environments, with separate config objects, making it easy for you to deploy your apps as well as develop them locally while benefiting from the same frontend development experience you're used to from developing non-MFE applications.
-- TSDocs added to make the code easier to understand.
-- Dev servers configured to listen on different ports so they can be run locally without conflicts. Host is on 6001, Remotes start from 6002 upwards. For production or deployed/container environments, configuration is separate (e.g., you would use your web server or proxy ports and host names).
+* **Tooling:** Projects are based on the `create-rsbuild` React template and use Biome for code linting and formatting.
+* **TypeScript:** The `tsconfig` files have been configured with stricter options (`noFallthroughCasesInSwitch`, `noUncheckedIndexedAccess`, `strictNullChecks`, `noImplicitAny`) to promote more robust and higher-quality code.
+* **React:** Both the host and remote applications use React 19, though any framework supported by Rsbuild could be used.
+* **Routing:** React Router is configured in Data Mode, which separates route configuration from React rendering. This makes it easier to share a single source of truth for routing and links, and it enables features like data loading, actions, and pending states.
+* **Performance:** Rsbuild and Rspack provide near-instant hot-reloading, even when updating the remote MFE and viewing the changes in the host.
+* **Production Readiness:** The project includes provisions for configuring remote MFE URLs in production or deployed environments, allowing for a seamless transition from local development to deployment.
+* **Documentation:** TSDocs have been added throughout the codebase to improve clarity and understanding.
+* **Development Experience:** The dev servers are configured to run on different ports (Host: 6001, Remotes: 6002+) to prevent conflicts when running locally.
 
-The projects are very small, so you should definitely check out every file to get an idea of how everything works.
+The project is intentionally small to make it easy to explore the entire codebase and understand how everything works together.
 
-## Learn more
+## Learn More
 
 To learn more about Rsbuild, check out the following resources:
 
-- [Rsbuild documentation](https://rsbuild.rs) - explore Rsbuild features and APIs.
-- [Rsbuild GitHub repository](https://github.com/web-infra-dev/rsbuild) - your feedback and contributions are welcome!
-
+* **Rsbuild documentation:** Explore features and APIs at [https://rsbuild.rs](https://rsbuild.rs).
