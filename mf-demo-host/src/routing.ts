@@ -5,7 +5,7 @@ import {
 } from 'react-router';
 import App from './App';
 import { RouteModuleErrorBoundary } from './error-boundaries/RouteModuleErrorBoundary';
-import { EventNotificationFe } from './pages/mfes/event-notification-fe';
+import { RemoteFe } from './pages/mfes/remote-fe';
 import Page1 from './pages/page-1/Page1';
 import Page2 from './pages/page-2/Page2';
 
@@ -60,12 +60,12 @@ export const page2Route: NavigableRouteObject = {
   Component: Page2,
 };
 
-/** Event Notification (Micro) Frontend mounting path. */
-export const eventNotificationFeRoute: NavigableRouteObject = {
+/** Remote (Micro) Frontend mounting path. */
+export const remoteFeRoute: NavigableRouteObject = {
   ErrorBoundary: RouteModuleErrorBoundary,
-  path: '/app/event-notification/*',
-  pathname: '/app/event-notification',
-  Component: EventNotificationFe,
+  path: '/app/remote-fe/*',
+  pathname: '/app/remote-fe',
+  Component: RemoteFe,
 };
 
 // NOTE: Don't forget to add all defined routes to the routes array below!
@@ -74,7 +74,7 @@ const routes: RouteObject[] = [
   homeRoute,
   page1Route,
   page2Route,
-  eventNotificationFeRoute,
+  remoteFeRoute,
 ];
 
 /**

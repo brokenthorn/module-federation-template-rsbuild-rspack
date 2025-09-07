@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router';
 import './App.css';
 import React from 'react';
-import { eventNotificationFeRoute, page1Route, page2Route } from './routing';
+import { remoteFeRoute, page1Route, page2Route } from './routing';
 
 const RemoteButton = React.lazy(() => import('mf_demo_remote/button'));
 
@@ -19,10 +19,8 @@ const App = () => {
         </NavLink>
       </p>
       <p>
-        <NavLink to={eventNotificationFeRoute.pathname}>
-          <button type="button">
-            Event Notification MFE (via module federation)
-          </button>
+        <NavLink to={remoteFeRoute.pathname}>
+          <button type="button">Remote MFE (via module federation)</button>
         </NavLink>
       </p>
       <p>

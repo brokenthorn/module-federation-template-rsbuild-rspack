@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { eventNotificationFeRoute } from '../../routing';
+import { remoteFeRoute } from '../../routing';
 
-/** Event Notification Frontend Mounter Component. */
-export const EventNotificationFe = () => {
+/** Remote Frontend Mounter Component. */
+export const RemoteFe = () => {
   const ref = useRef<HTMLDivElement>(null);
   const importModule = () => import('mf_demo_remote/mfe-mount');
 
@@ -13,13 +13,13 @@ export const EventNotificationFe = () => {
       .then(({ mount, unmount }) => {
         if (!ref.current) {
           throw new Error(
-            'Cannot mount Event Notification FE: the Element ref was undefined (not bound)',
+            'Cannot mount Remote FE: the Element ref was undefined (not bound)',
           );
         }
         unmountMfe = unmount;
         ref.current.innerText = ''; // remove loading message
         ref.current.className = ''; // remove the styles used for the loading msg
-        mount(ref.current, eventNotificationFeRoute.pathname);
+        mount(ref.current, remoteFeRoute.pathname);
       })
       .catch((error) => {
         console.error(error);
@@ -27,7 +27,7 @@ export const EventNotificationFe = () => {
           if (error instanceof Error) {
             ref.current.innerHTML = `<p>${error.name}: ${error.message}</p>`;
           } else {
-            ref.current.innerHTML = `<p>Cannot mount Event Notification FE: Unknown error</p>`;
+            ref.current.innerHTML = `<p>Cannot mount Remote FE: Unknown error</p>`;
           }
         }
       });
