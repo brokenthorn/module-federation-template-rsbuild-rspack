@@ -24,6 +24,10 @@ Refer to the `README.md` file within each folder for instructions on how to run 
 
 The project is intentionally small to make it easy to explore the entire codebase and understand how everything works together.
 
+## Demo video
+
+[chrome-capture-2025-09-07.webm](https://github.com/user-attachments/assets/a9ddf43d-e7c3-493f-afdf-16d190416305)
+
 ## Learn More
 
 To learn more about Rsbuild, check out the following resources:
